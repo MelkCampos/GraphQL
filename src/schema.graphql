@@ -1,0 +1,24 @@
+
+# usuário na API
+# "!" para campos obrigatorios
+type User {
+    id: ID!
+    name: String!
+    email: String!    
+}
+
+# buscar informações
+type Query {
+    users: [User!]!    
+
+    # retornar um único usuário
+    user(id: ID): User
+}
+
+
+# alterações em geral de dados
+type Mutation {
+
+    # criação de usuário
+    createUser(name: String, email: String!): User
+}
